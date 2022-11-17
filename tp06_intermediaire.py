@@ -7,7 +7,6 @@
 #
 #
 #
-import re
 
 # Suite
 # 1
