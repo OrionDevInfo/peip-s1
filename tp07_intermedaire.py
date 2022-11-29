@@ -67,7 +67,7 @@ def sComplementReversed(s) :
 # 7
 # def occurences(sub,s) : return s.count(sub)
 def occurences(sub,s) :
-    o, l = 0, len(c)
+    o, l = 0, len(s)
     for i in range(len(s)) :
         if s[i:i+l] == sub : o += 1
     return o
