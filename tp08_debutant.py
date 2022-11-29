@@ -1,4 +1,12 @@
-from re import A
+# Auteur : Orion
+#
+# Date : 24/11/2022
+#
+# État : Terminé
+#
+#
+#
+#
 
 # Quotient et reste dans la division euclidienne
 def divmod_verbeux(a, b):
@@ -122,10 +130,58 @@ def palindrome(s) :
         i+=1
     return i == len(s)//2
 # 9
-def est_ADN() :
+def est_ADN(s) :
     '''
+    >>> est_ADN('ATGCGATC')
+    True
+    >>> est_ADN('ACKT')
+    False
+    >>> est_ADN('ACTK')
+    False
+    >>> est_ADN('')
+    True
     '''
-    return
+    i=0
+    while i < len(s) and s[i] in 'ACGT' : i+=1
+    return i == len(s)
+
+# Vol de Syracuse 
+#10
+# def vol_syracuse(n):
+#     """Nombre d'étapes nécessaires pour atteindre 1 en partant de n
+#     dans la suite de Syracuse.
+#     Paramètres :
+#     - n (int)
+#     Valeur de retour (int) : nombre d'étapes
+#     Contraintes : n > 0
+#     Exemples
+#     >>> vol_syracuse(14)
+#     17
+#     >>> vol_syracuse(1)
+#     0
+#     """
+#     etape = 0
+#     terme = n
+#     while terme != 1:
+#         if terme % 2 == 0:
+#             terme = terme // 2
+#         else:
+#             terme = terme * 3 + 1
+#         etape = etape + 1
+#     return etape
+def alt_max_syracuse(n) :
+    '''
+    >>> alt_max_syracuse(1024)
+    1024
+    >>> alt_max_syracuse(871)
+    190996
+    '''
+    v, m = n, n
+    while v != 1 :
+        if v % 2 == 0 : v//=2
+        else : v= 3*v + 1
+        if v > m: m= v
+    return m
 
 from doctest import testmod
 testmod(verbose=False)
