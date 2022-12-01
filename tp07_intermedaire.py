@@ -67,9 +67,13 @@ def sComplementReversed(s) :
 # 7
 # def occurences(sub,s) : return s.count(sub)
 def occurences(sub,s) :
-    o, l = 0, len(s)
+    '''
+    >>> occurences('ACG', 'GCTACGGAGCTTCGGAGCACGTAG')
+    2
+    '''
+    o = 0
     for i in range(len(s)) :
-        if s[i:i+l] == sub : o += 1
+        if s[i:i+len(sub)] == sub : o += 1
     return o
 # 8
 def tirets(s) :
